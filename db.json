@@ -6,7 +6,8 @@
       "cpf": "05236356130",
       "id": 1,
       "cep": "72430109",
-      "email": "pedroservio2010@gmail.com"
+      "email": "pedroservio2010@gmail.com",
+      "tel": "6199949929"
     },
     {
       "nome": "Carolina",
@@ -38,7 +39,8 @@
       "rg": "9999999",
       "cpf": "12345678910",
       "cep": "12345678",
-      "id": 6
+      "id": 6,
+      "tel": "6111111111"
     }
   ]
 }

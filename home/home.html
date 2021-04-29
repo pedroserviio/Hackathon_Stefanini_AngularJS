@@ -1,10 +1,11 @@
-<div class="container" style="border: 1px solid;" ng-init="vm.init()">
+<div class="container-fluid" ng-init="vm.init()">
 
     <label for="exampleDataList" style="margin-top: 10px;" class="form-label">
-        <strong>Filtro de pesquisa:</strong> 
+        <strong>Filtro de pesquisa:</strong>
     </label>
 
-    <input class="form-control" style="margin-bottom: 10px;" list="datalistOptions" ng-model="vm.filtroPesquisa" id="exampleDataList" placeholder="Pesquisar itens">
+    <input class="form-control" style="margin-bottom: 10px;" list="datalistOptions" ng-model="vm.filtroPesquisa"
+        id="exampleDataList" placeholder="Pesquisar itens">
 
     <div class="container" ng-if="vm.erro">
         <alert-para-usuario msg="'Falha na conexão com banco de dados'" tipo="'erro'"> </alert-para-usuario>
@@ -26,6 +27,9 @@
                 </th>
                 <th scope="col" ng-click="vm.orderByMe('cep')"> CEP <span class="material-icons">&#xe313;</span></th>
                 </th>
+                </th>
+                <th scope="col" ng-click="vm.orderByMe('tel')" style="width: 11%;"> Telefone <span class="material-icons">&#xe313;</span></th>
+                </th>
                 <th scope="col">Editar</th>
                 <th scope="col">Excluir</th>
             </tr>
@@ -38,6 +42,7 @@
                 <td>{{cliente.rg}}</td>
                 <td>{{cliente.cpf}}</td>
                 <td>{{cliente.cep}}</td>
+                <td>{{cliente.tel}}</td>
                 <td>
                     <button type="button" class="btn btn-outline-secondary" ng-click="vm.editar(cliente.id)">
                         <span class="material-icons">&#xe3c9;</span>
@@ -45,7 +50,7 @@
                 </td>
                 <td>
                     <button type="button" class="btn btn-outline-danger" ng-click="vm.excluir(cliente.id)">
-                       <span class="material-icons">&#xef66;</span>
+                        <span class="material-icons">&#xef66;</span>
                     </button>
                 </td>
             </tr>
