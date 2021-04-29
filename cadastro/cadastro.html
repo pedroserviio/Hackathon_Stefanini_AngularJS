@@ -1,0 +1,36 @@
+<div class="container" style="border: 1px solid;">
+    <h1>{{vm.teste}} <span class="material-icons">&#xe174;</span></h1>
+
+    <form>
+        <div class="form-group">
+            <label for="formGroupExampleInput"><strong>Nome:</strong> </label>
+            <input type="text" class="form-control" id="nome" ng-model="vm.cliente.nome" placeholder="Nome do Cliente"
+                ng-pattern="/^[A-Za-z]" required>
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput"><strong>Email:</strong> </label>
+            <input type="text" class="form-control" id="nome" ng-model="vm.cliente.email" placeholder="nome@exemplo.com"
+                required>
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput2"><strong>RG:</strong></label>
+            <input type="text" class="form-control" id="rg" ng-model="vm.cliente.rg" ui-mask="9.999.999"
+                ng-pattern="/^[1-9]{7}" required>
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput2"><strong>CPF:</strong></label>
+            <input type="text" class="form-control" id="cpf" ng-model="vm.cliente.cpf" ui-mask="999.999.999-99"
+                ng-pattern="/^[1-9]{12}" required>
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput2"><strong>CEP:</strong></label>
+            <input type="text" class="form-control" id="cpf" ng-model="vm.cliente.cep" ui-mask="99999-999"
+                ng-pattern="/^[1-9]{8}" required>
+        </div>
+    </form>
+    <button type="button" class="btn btn-primary" style="margin-bottom: 10px;" ng-click="vm.cadastrar()"
+        ng-disabled="!vm.cliente.nome || !vm.cliente.email || !vm.cliente.rg || !vm.cliente.cpf || !vm.cliente.cep">
+        {{vm.textoBotao}}
+    </button>
+    <button type="button" class="btn btn-secondary" style="margin-bottom: 10px;" ng-click="vm.limpar()">Limpar</button>
+</div>

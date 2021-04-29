@@ -1,0 +1,55 @@
+<div class="container" style="border: 1px solid;" ng-init="vm.init()">
+
+    <label for="exampleDataList" style="margin-top: 10px;" class="form-label">
+        <strong>Filtro de pesquisa:</strong> 
+    </label>
+
+    <input class="form-control" style="margin-bottom: 10px;" list="datalistOptions" ng-model="vm.filtroPesquisa" id="exampleDataList" placeholder="Pesquisar itens">
+
+    <div class="container" ng-if="vm.erro">
+        <alert-para-usuario msg="'Falha na conexão com banco de dados'" tipo="'erro'"> </alert-para-usuario>
+    </div>
+
+    <table class="table" border="1" width="100%" ng-if="vm.clientes">
+        <thead>
+            <tr>
+                <!-- Ordena ao clicar no header-->
+                <th scope="col" ng-click="vm.orderByMe('id')" style="width: 7%"> ID <span
+                        class="material-icons">&#xe313;</span>
+                <th scope="col" ng-click="vm.orderByMe('nome')"> Nome <span class="material-icons">&#xe313;</span></th>
+                <th scope="col" ng-click="vm.orderByMe('email')"> Email <span class="material-icons">&#xe313;</span>
+                </th>
+                </th>
+                <th scope="col" ng-click="vm.orderByMe('rg')"> RG <span class="material-icons">&#xe313;</span></th>
+                </th>
+                <th scope="col" ng-click="vm.orderByMe('cpf')"> CPF <span class="material-icons">&#xe313;</span></th>
+                </th>
+                <th scope="col" ng-click="vm.orderByMe('cep')"> CEP <span class="material-icons">&#xe313;</span></th>
+                </th>
+                <th scope="col">Editar</th>
+                <th scope="col">Excluir</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="cliente in vm.clientes | filter: vm.filtroPesquisa | orderBy: 'id' | orderBy: vm.myOrderBy">
+                <th scope="row">{{cliente.id}}</th>
+                <td>{{cliente.nome | uppercase}}</td>
+                <td>{{cliente.email}}</td>
+                <td>{{cliente.rg}}</td>
+                <td>{{cliente.cpf}}</td>
+                <td>{{cliente.cep}}</td>
+                <td>
+                    <button type="button" class="btn btn-outline-secondary" ng-click="vm.editar(cliente.id)">
+                        <span class="material-icons">&#xe3c9;</span>
+                    </button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-outline-danger" ng-click="vm.excluir(cliente.id)">
+                       <span class="material-icons">&#xef66;</span>
+                    </button>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>

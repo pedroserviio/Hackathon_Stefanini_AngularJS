@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt_BR" ng-app="app">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Curso Angular</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
+        integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap.min.css">
+    <script src="node_modules\bootstrap\dist\js\bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="node_modules\bootstrap\dist\js\bootstrap.bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script src="node_modules\angular\angular.min.js"></script>
+    <script src="node_modules\angular-route\angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-mask/1.8.7/mask.min.js"></script>
+
+    <script src="curso-app.js"></script>
+    <script src="curso-router.js"></script>
+
+    <script src="curso-service.js"></script>
+    <script src="cadastro/cadastro-controller.js"></script>
+    <script src="home/home-controller.js"></script>
+    <script src="menu/menu-controller.js"></script>
+    <script src="componente/componente-alert.js"></script>
+
+    <link rel="shortcut icon" href="assets\favicon.ico">
+
+    <style>
+        .nav-tabs>li>a.active {
+            background-color: gray !important;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container" style="margin-top: 20px;">
+        <div class="menu" ng-controller="MenuController as vm">
+            <ul class="nav nav-tabs justify-content-center nav-fill">
+                <li class="nav-item" ng-repeat="item in vm.itensMenu">
+                    <a ng-class="item.class" class="nav-link active" ng-click="vm.navegar(item.titulo, vm.itensMenu)">
+                        {{item.titulo}} 
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div ng-view></div>
+    </div>
+</body>
+
+</html>

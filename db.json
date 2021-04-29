@@ -1,0 +1,44 @@
+{
+  "clientes": [
+    {
+      "nome": "Pedro Victor Servio de Melo",
+      "rg": "3383347",
+      "cpf": "05236356130",
+      "id": 1,
+      "cep": "72430109",
+      "email": "pedroservio2010@gmail.com"
+    },
+    {
+      "nome": "Carolina",
+      "rg": "08072009",
+      "cpf": "08072009111",
+      "id": 2
+    },
+    {
+      "nome": "Caio",
+      "rg": "26122017",
+      "cpf": "26122017333",
+      "id": 3
+    },
+    {
+      "nome": "Maria Eduarda",
+      "rg": "02032003",
+      "cpf": "02032003118",
+      "id": 4
+    },
+    {
+      "nome": "Joao",
+      "rg": "123456789",
+      "cpf": "12345678912",
+      "id": 5
+    },
+    {
+      "nome": "Cleiton",
+      "email": "cleiton@gmail.com",
+      "rg": "9999999",
+      "cpf": "12345678910",
+      "cep": "12345678",
+      "id": 6
+    }
+  ]
+}
